@@ -29,7 +29,7 @@ class VK:
         # Проверка и создание папки на Google Drive
         folder_id = self.create_folder_on_google_drive(drive, folder_path)
 
-        # Проверка и создание папки 'backup' на Яндекс.Диске
+        # Проверка и создание папки 'backup' на Яндекс Диске
         self.create_folder_on_yandex_disk(folder_path)
 
         photos = self.get_photos_from_album(selected_album['id'])
@@ -168,10 +168,10 @@ class VK:
         href = data['href']
         with open(file_name, 'rb') as file:
             response = requests.put(href, files={'file': file})
-        print(f"Фотография '{file_name}' успешно загружена на Яндекс.Диск.")
+        print(f"Фотография '{file_name}' успешно загружена на Яндекс Диск.")
 
     def create_folder_on_yandex_disk(self, folder_path):
-        # Создание папки на Яндекс.Диске
+        # Создание папки на Яндекс Диске
         headers = {'Authorization': f"OAuth {self.yandex_token}"}
         create_folder_url = 'https://cloud-api.yandex.net/v1/disk/resources'
         params = {
@@ -179,16 +179,16 @@ class VK:
         }
         response = requests.put(create_folder_url, headers=headers, params=params)
         if response.status_code == 201:
-            print(f"Папка '{folder_path}' успешно создана на Яндекс.Диске.")
+            print(f"Папка '{folder_path}' успешно создана на Яндекс Диске.")
         elif response.status_code == 409:
-            print(f"Папка '{folder_path}' уже существует на Яндекс.Диске.")
+            print(f"Папка '{folder_path}' уже существует на Яндекс Диске.")
         else:
-            print("Ошибка при создании папки на Яндекс.Диске.")
+            print("Ошибка при создании папки на Яндекс Диске.")
 
 access_token = "vk1.a.HoAJZ5_4N42M2CnU5ld2i9G9E0mz8J1JpAfY9ympybHcv0IQsF4NR5rjMFbXXuWOgUNQ3TZIm4Ffcwk68gJqcy6_JEbYgeY9ldD9QnOHeVJn2gxe0SseJJhHYeWvVkt0k880EjgAAZAQNpzI28b20OkAruykGratm-fzSAmG-mMWfJGX-edi9n7YDmZ1MxQBiK2jCNA1xL9DVk8hZhL9Sw"
 user_id = input("Введите свой ID VK: ")
 google_drive_credentials = "client_secrets.json"
-yandex_token = input("Введите свой токен Яндекс.Диска: ")
+yandex_token = input("Введите свой токен Яндекс Диска: ")
 
 vk = VK(access_token, user_id, google_drive_credentials, yandex_token)
 
