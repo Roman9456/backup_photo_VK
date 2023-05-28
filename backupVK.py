@@ -1,3 +1,4 @@
+from api import YandexAPI, HttpException, VkAPI
 import requests
 import json
 import os
@@ -12,6 +13,7 @@ class VK:
         self.user_id = user_id
         self.google_drive_credentials = google_drive_credentials
         self.yandex_token = yandex_token
+        self.vk_api = VkAPI(access_token)
 
     def backup_vk_photos(self, num_photos=5):
         selected_album = self.select_album()
