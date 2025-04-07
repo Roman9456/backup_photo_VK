@@ -1,14 +1,25 @@
-This code represents a program for backing up photos from a selected VKontakte album. The photos are saved to Google Drive and Yandex Disk.
+# 📸 VKontakte Photo Backup Utility
 
-Dependencies
-The program requires the installation of the following dependencies:
+_A program to backup photos from VKontakte albums to Google Drive and Yandex Disk_
 
-requests: for sending HTTP requests.
-json: for working with JSON data.
-os: for working with the file system.
-tqdm: for displaying the progress of operations.
-pydrive: for working with Google Drive.
-You can install the dependencies by executing the following command:
+---
+
+## 🔧 Dependencies
+
+The program requires the following Python packages:
+
+| Package    | Purpose                          |
+|------------|----------------------------------|
+| `requests` | Sending HTTP requests            |
+| `json`     | Working with JSON data           |
+| `os`       | File system operations           |
+| `tqdm`     | Progress bar visualization       |
+| `pydrive`  | Google Drive API integration     |
+
+### Installation
+
+pip install requests pydrive tqdm
+
 
 
 pip install requests pydrive tqdm
